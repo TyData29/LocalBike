@@ -1,0 +1,145 @@
+version: 2
+
+sources:
+  - name: localbike-src
+    database: localbike-446611
+    tables:
+      - name: brands
+        schema: source
+        description :  "{{ doc('src_t__brands') }}"
+        columns : 
+            - name : brand_id
+              tests:
+                - not_null
+                - unique
+            - name : brand_name
+
+      - name: categories
+        schema: source
+        description :  "{{ doc('src_t__categories') }}"
+        columns : 
+            - name : category_id
+              tests:
+                - not_null
+                - unique
+            - name : category_name
+
+      - name: customers
+        schema: source
+        description :  "{{ doc('src_t__customers') }}"
+        columns : 
+            - name : customer_id
+              tests:
+                - not_null
+                - unique
+            - name : first_name
+            - name : last_name
+            - name : phone
+            - name : email
+            - name : street
+            - name : city
+            - name : state
+            - name : zip_code
+
+      - name: order_items
+        schema: source
+        description :  "{{ doc('src_t__order_items') }}"
+        columns : 
+            - name : order_id
+              tests:
+                - not_null
+            - name : item_id
+            - name : product_id
+              tests:
+                - not_null
+            - name : quantity
+            - name : list_price
+            - name : discount
+
+      - name: orders
+        schema: source
+        description :  "{{ doc('src_t__orders') }}"
+        columns : 
+            - name : order_id
+              tests:
+                - not_null
+                - unique
+            - name : customer_id
+              tests:
+                - not_null
+            - name : order_status
+            - name : order_date
+            - name : required_date
+            - name : shipped_date
+            - name : store_id
+              tests:
+                - not_null
+            - name : staff_id
+              tests:
+                - not_null
+
+      - name: products
+        schema: source
+        description :  "{{ doc('src_t__products') }}"
+        columns : 
+            - name : product_id
+              tests:
+                - not_null
+                - unique
+            - name : product_name
+            - name : brand_id
+              tests:
+                - not_null
+            - name : category_id
+              tests:
+                - not_null
+            - name : model_year
+            - name : list_price
+
+      - name: staffs
+        schema: source
+        description :  "{{ doc('src_t__staffs') }}"
+        columns : 
+            - name : staff_id
+              tests:
+                - not_null
+                - unique
+            - name : first_name
+            - name : last_name
+            - name : email
+            - name : phone
+            - name : active
+            - name : store_id
+              tests:
+                - not_null
+            - name : manager_id
+              tests:
+                - not_null
+
+      - name: stocks
+        schema: source
+        description :  "{{ doc('src_t__stocks') }}"
+        columns : 
+            - name : store_id
+              tests:
+                - not_null
+                - unique
+            - name : product_id
+              tests:
+                - not_null
+            - name : quantity
+
+      - name: stores
+        schema: source
+        description :  "{{ doc('src_t__stores') }}"
+        columns : 
+            - name : store_id
+              tests:
+                - not_null
+            - name : store_name
+            - name : phone
+            - name : email
+            - name : street
+            - name : city
+            - name : state
+            - name : zip_code
