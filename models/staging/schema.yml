@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: stg_brands
+    description :  "{{ doc('src_t__brands') }}"
+  - name: stg_categories
+    description :  "{{ doc('src_t__categories') }}"
+  - name: stg_customers
+    description :  "{{ doc('src_t__customers') }}"
+  - name: stg_order_items
+    description :  "{{ doc('src_t__order_items') }}"
+  - name: stg_orders
+    description :  "{{ doc('src_t__orders') }}"
+    columns : 
+        - name : order_date_year
+          description : Année de la commande
+        - name : order_date_month
+          description : Mois de la commande
+        - name : order_date_weekday
+          description : Jour de la semaine de la commande
+        - name : shipping_delay
+          description : Retard d'expédition (en jours)
+
+  - name: stg_products
+    description :  "{{ doc('src_t__products') }}"
+
+  - name: stg_staffs
+    description :  "{{ doc('src_t__staffs') }}"
+
+  - name: stg_stocks
+    description :  "{{ doc('src_t__stocks') }}"
+
+  - name: stg_stores
+    description :  "{{ doc('src_t__stores') }}"
