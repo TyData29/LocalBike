@@ -1,10 +1,18 @@
-Welcome to your new dbt project!
+Welcome to localbike dbt project!
 
-### Using the starter project
+### Purpose
 
-Try running the following commands:
-- dbt run
-- dbt test
+This project uses LocalBike datas in order to prepare and set marts for dashboards.
+
+The context is the final project of Databird Analytics Engineer training course.
+
+We will be abble to :
+- Find analysis axes for operations team of Localbike
+- Help the team to optimize sells and maximize incomes using smart insights
+
+## Datas
+
+The datasets lies in BigQuery
 
 
 ### Resources:
