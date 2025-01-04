@@ -1,0 +1,7 @@
+version: 2
+
+models:
+    
+  - name: itm_staff_performance
+  - name : itm_sales
+  - name : itm_inventory
