@@ -1,14 +1,18 @@
 version: 2
 
 models:
-  - name: stg_brands
-    description :  "{{ doc('src_t__brands') }}"
-  - name: stg_categories
-    description :  "{{ doc('src_t__categories') }}"
+    
   - name: stg_customers
     description :  "{{ doc('src_t__customers') }}"
   - name: stg_order_items
     description :  "{{ doc('src_t__order_items') }}"
+    columns : 
+        - name : list_based_amount
+          description : Valeur de l'item au prix catalogue (prix unitaire x quantité)
+        - name : billed_amount
+          description : Prix réellement facturé compte tenu de la remise client
+        - name : discount_amount
+          description : Montant de la remise client
   - name: stg_orders
     description :  "{{ doc('src_t__orders') }}"
     columns : 

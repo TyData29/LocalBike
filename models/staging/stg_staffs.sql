@@ -1,10 +1,3 @@
 -- stg_staffs.sql
 
-{{
-    config(
-        unique_key = ['staff_id'],
-        cluster_by = ['store_id']
-    )
-}}
-
-select * from {{ source('source','staffs') }}
+select * from {{ source('source','staffs') }} order by store_id, manager_id
