@@ -2,15 +2,22 @@
 
 ## Marts models
 {% docs mart_t__staff_performance_last_month %}
-    Cette table extrait la **tableau des “employés du mois”** (métriques sur les ventes par staff) pour le dernier mois échu
+    Cette table extrait la **tableau des “employés du mois”** (métriques sur les ventes par staff) pour le dernier mois échu.
+    Les métriques associées visent à : 
+    - Mesurer le CA généré 
+    - Contrôler le taux de remise accordé pour sécuriser les marges et homogénéiser les pratiques entre employés
 {% enddocs %}
 
 {% docs mart_t__stores_performance %}
-    Cette table extrait une **vue détaillée des ventes par POS** historisée avec une granularité fine : elle sera utilisée pour des analyses poussées sur la performance des points de vente
+    Cette table extrait une **vue détaillée des ventes par POS** historisée avec une granularité fine.
+    Elle sera utilisée pour des analyses poussées sur la performance des points de vente :
+    - Evolution des métriques au niveau d'un point de vente en particulier (filtrer sur le point de vente)
+    - Comparaison des performances entre les différents points de vente
 {% enddocs %}
 
 {% docs mart_t__stores_performance_last_month %}
-    Cette table extrait une **synthèse des ventes par POS pour le dernier mois échu**
+    Cette table extrait une **synthèse des ventes par POS pour le dernier mois échu**.
+    Elle permet un contrôle rapide des performances récentes de chaque point de vente.
 {% enddocs %}
 
 ## Marts fields
