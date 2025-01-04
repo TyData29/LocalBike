@@ -10,6 +10,7 @@ orders as (
     select 
         order_id,
         customer_id,
+        order_date,
         order_date_year,
         order_date_month,
         order_date_weekday,
@@ -62,6 +63,7 @@ join_sales as (
     select
         -- orders
         o.order_id,
+        o.order_date,
         o.order_date_year,
         o.order_date_month,
         o.order_date_weekday,
@@ -102,6 +104,7 @@ join_sales as (
 agg_sales as (
     select
         -- orders
+        order_date,
         order_date_year,
         order_date_month,
         order_date_weekday,
@@ -128,6 +131,7 @@ agg_sales as (
 
     from join_sales
     group by 
+        order_date,
         order_date_year,
         order_date_month,
         order_date_weekday,

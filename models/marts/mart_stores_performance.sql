@@ -1,5 +1,5 @@
--- itm_stores_performance.sql : Activité des points de vente
-*/
+-- mart_stores_performance.sql : Activité des points de vente
+
 
 WITH 
 
@@ -9,11 +9,11 @@ stores_sales as (
 ),
 stores_synthetic_sales as (
     select 
-        store_id,
         store_name,
         store_state,
         store_zip_code,
         store_city,
+        order_date,
         order_date_year,
         order_date_month,
         order_date_weekday,
@@ -26,5 +26,17 @@ stores_synthetic_sales as (
         sum(list_based_amount_sum) as list_base_value_sum,
         sum(billed_amount_sum) as revenue_sum
     from stores_sales
+    group by 
+        store_name,
+        store_state,
+        store_zip_code,
+        store_city,
+        order_date,
+        order_date_year,
+        order_date_month,
+        order_date_weekday,
+        category_name,
+        brand_name,
+        product_name
 )
 select * from stores_synthetic_sales

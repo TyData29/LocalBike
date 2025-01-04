@@ -40,3 +40,6 @@ models:
     intermediate:
       +schema: itm
       +materialized: view
+    marts:
+      +schema: mart
+      +materialized: table
