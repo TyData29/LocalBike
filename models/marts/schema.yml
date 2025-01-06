@@ -1,0 +1,170 @@
+version: 2
+
+models:
+    
+  - name: mart_staff_performance_last_month
+    description : "{{ doc('mart_staff_performance_last_month') }}"
+    columns:
+      # Dimensions
+      - name: staff_id
+        description: "{{ doc('staff_id') }}"
+        data_type: integer
+      - name: first_name
+        description: "{{ doc('first_name') }}"
+        data_type: string
+      - name: last_name
+        description: "{{ doc('last_name') }}"
+        data_type: string
+      - name: store_id
+        description: "{{ doc('store_id') }}"
+        data_type: integer
+      - name: store_name
+        description: "{{ doc('store_name') }}"
+        data_type: string
+      - name: order_date_year
+        description: "{{ doc('order_date_year') }}"
+        data_type: int64
+      - name: order_date_month
+        description: "{{ doc('order_date_month') }}"
+        data_type: int64
+      - name: orders_total
+        description : "{{ doc('orders_total') }}"
+        data_type: int64
+     # Metrics
+      - name: list_base_value_sum
+        description : "{{ doc('list_based_value_sum') }}"
+        data_type: float64
+      - name: revenue_sum
+        description : "{{ doc('revenue_sum') }}"
+        data_type: float64
+      - name: average_discount_ratio
+        description : "{{ doc('average_discount_ratio') }}"
+        data_type: float64
+      - name: avg_revenue_per_order
+        description : "{{ doc('avg_revenue_per_order') }}"
+        data_type: float64
+
+  - name : mart_stores_performance_last_month
+    description : "{{ doc('mart_staff_performance_last_month') }}"
+    columns:
+      # Dimensions
+      - name: store_name
+        description: "{{ doc('store_name') }}"
+        data_type: string
+      - name: store_state
+        description: "{{ doc('store_state') }}"
+        data_type: string
+      - name: store_zip_code
+        description: "{{ doc('store_zip_code') }}"
+        data_type: int64
+      - name: store_city
+        description: "{{ doc('store_city') }}"
+        data_type: string
+      - name: order_date_year
+        description: "{{ doc('order_date_year') }}"
+        data_type: int64
+      - name: order_date_month
+        description: "{{ doc('order_date_month') }}"
+        data_type: int64
+      # Metrics
+      - name: orders_total
+        description : "{{ doc('orders_total') }}"
+        data_type: int64
+      - name: distinct_customers_total
+        description : "{{ doc('distinct_customers_total') }}"
+        data_type: int64
+      - name: selled_products_total
+        description : "{{ doc('selled_products_total') }}"
+        data_type: int64
+      - name: list_base_value_sum
+        description : "{{ doc('list_based_value_sum') }}"
+        data_type: float64
+      - name: revenue_sum
+        description : "{{ doc('revenue_sum') }}"
+        data_type: float64
+
+  - name : mart_stores_performance
+    description : "{{ doc('mart_stores_performance') }}"
+    columns:
+      # Dimensions
+      - name: store_name
+        description: "{{ doc('store_name') }}"
+        data_type: string
+      - name: store_state
+        description: "{{ doc('store_state') }}"
+        data_type: string
+      - name: store_zip_code
+        description: "{{ doc('store_zip_code') }}"
+        data_type: int64
+      - name: store_city
+        description: "{{ doc('store_city') }}"
+        data_type: string
+      - name: order_date
+        description: "{{ doc('order_date') }}"
+        data_type: date
+      - name: order_date_year
+        description: "{{ doc('order_date_year') }}"
+        data_type: int64
+      - name: order_date_month
+        description: "{{ doc('order_date_month') }}"
+        data_type: int64
+      - name: order_date_weekday
+        description : "{{ doc('order_date_weekday') }}"
+        data_type: int64
+      - name: category_name
+        description : "{{ doc('category_name') }}"
+        data_type: string
+      - name: brand_name
+        description : "{{ doc('brand_name') }}"
+        data_type: string
+      - name: product_name
+        description : "{{ doc('product_name') }}"
+        data_type: string
+      # Metrics
+      - name: orders_total
+        description : "{{ doc('orders_total') }}"
+        data_type: int64
+      - name: distinct_customers_total
+        description : "{{ doc('distinct_customers_total') }}"
+        data_type: int64
+      - name: selled_products_total
+        description : "{{ doc('selled_products_total') }}"
+        data_type: int64
+      - name: list_base_value_sum
+        description : "{{ doc('list_based_value_sum') }}"
+        data_type: float64
+      - name: revenue_sum
+        description : "{{ doc('revenue_sum') }}"
+        data_type: float64
+
+  - name : mart_inventory
+    description : "{{ doc('mart_inventory') }}"
+    columns:
+      # Dimensions
+      - name: store_id
+        description: "{{ doc('store_id') }}"
+        data_type: integer
+      - name: store_name
+        description: "{{ doc('store_name') }}"
+        data_type: string
+      - name: product_id
+        description: "{{ doc('product_id') }}"
+        data_type: integer
+      - name: category_name
+        description: "{{ doc('category_name') }}"
+        data_type: string
+      - name: brand_name
+        description: "{{ doc('brand_name') }}"
+        data_type: string
+      - name: product_name
+        description: "{{ doc('product_name') }}"
+        data_type: string
+      - name: stock_quantity
+        description: "{{ doc('stock_quantity') }}"
+        data_type: string
+      - name: avg_daily_sales
+        description: "{{ doc('avg_daily_sales') }}"
+        data_type: string
+      - name: estimated_stock_out_date
+        description: "{{ doc('estimated_stock_out_date') }}"
+        data_type: string

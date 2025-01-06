@@ -9,9 +9,9 @@ WITH staff_sales AS (
         st.store_name,
         o.order_date_year,
         o.order_date_month,
-        COUNT(o.order_id) AS order_count,
-        SUM(list_based_amount) AS total_sales_potential,
-        SUM(billed_amount) AS total_revenue
+        COUNT(o.order_id) AS orders_total,
+        SUM(list_based_amount) AS list_based_value_sum,
+        SUM(billed_amount) AS revenue_sum
     FROM {{ ref('stg_staffs') }} s
     LEFT JOIN {{ ref('stg_orders') }} o ON s.staff_id = o.staff_id
     LEFT JOIN {{ ref('stg_order_items') }} oi ON o.order_id = oi.order_id
@@ -27,9 +27,9 @@ SELECT
     store_name,
     order_date_year,
     order_date_month,
-    order_count,
-    total_sales_potential,
-    total_revenue,
-    round( (total_sales_potential - total_revenue)/total_sales_potential ,2) AS average_discount_ratio,
-    total_revenue / NULLIF(order_count, 0) AS avg_revenue_per_order
+    orders_total,
+    list_based_value_sum,
+    revenue_sum,
+    round( (list_based_value_sum - revenue_sum)/list_based_value_sum ,2) AS average_discount_ratio,
+    revenue_sum / NULLIF(orders_total, 0) AS avg_revenue_per_order
 FROM staff_sales

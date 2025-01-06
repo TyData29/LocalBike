@@ -3,142 +3,210 @@ version: 2
 sources:
   - name: source
     database: localbike-446611
+    description : "{{ doc('srcs_localbike')}}"
     tables:
       - name: brands
         schema: source
-        description :  "{{ doc('src_t__brands') }}"
+        description :  "{{ doc('src_brands') }}"
         columns : 
             - name : brand_id
+              description : "{{ doc('brand_id') }}"
               tests:
                 - not_null
                 - unique
             - name : brand_name
+              description : "{{ doc('brand_name') }}"
 
       - name: categories
         schema: source
-        description :  "{{ doc('src_t__categories') }}"
+        description :  "{{ doc('src_categories') }}"
         columns : 
             - name : category_id
+              description : "{{ doc('category_id') }}"
               tests:
                 - not_null
                 - unique
             - name : category_name
+              description : "{{ doc('category_name') }}"
 
       - name: customers
         schema: source
-        description :  "{{ doc('src_t__customers') }}"
+        description :  "{{ doc('src_customers') }}"
         columns : 
             - name : customer_id
+              description : "{{ doc('customer_id') }}"
               tests:
                 - not_null
                 - unique
             - name : first_name
+              description : "{{ doc('first_name') }}"
             - name : last_name
+              description : "{{ doc('last_name') }}"
             - name : phone
+              description : "{{ doc('phone') }}"
             - name : email
+              description : "{{ doc('email') }}"
             - name : street
+              description : "{{ doc('street') }}"
             - name : city
+              description : "{{ doc('city') }}"
             - name : state
+              description : "{{ doc('state') }}"
             - name : zip_code
+              description : "{{ doc('zip_code') }}"
 
       - name: order_items
         schema: source
-        description :  "{{ doc('src_t__order_items') }}"
+        description :  "{{ doc('src_order_items') }}"
         columns : 
             - name : order_id
+              description : "{{ doc('order_id') }}"
               tests:
                 - not_null
             - name : item_id
+              description : "{{ doc('item_id') }}"
             - name : product_id
+              description : "{{ doc('product_id') }}"
               tests:
                 - not_null
             - name : quantity
+              description : "{{ doc('quantity') }}"
             - name : list_price
+              description : "{{ doc('list_price') }}"
             - name : discount
+              description : "{{ doc('discount') }}"
 
       - name: orders
         schema: source
-        description :  "{{ doc('src_t__orders') }}"
+        description :  "{{ doc('src_orders') }}"
         columns : 
             - name : order_id
+              description : "{{ doc('order_id') }}"
               tests:
                 - not_null
                 - unique
             - name : customer_id
+              description : "{{ doc('customer_id') }}"
               tests:
                 - not_null
             - name : order_status
+              description : "{{ doc('order_status') }}"
+              tests:
+                - not_null
             - name : order_date
+              description : "{{ doc('order_date') }}"
+              tests:
+                - not_null
             - name : required_date
+              description : "{{ doc('required_date') }}"
             - name : shipped_date
+              description : "{{ doc('shipped_date') }}"
             - name : store_id
+              description : "{{ doc('store_id') }}"
               tests:
                 - not_null
             - name : staff_id
+              description : "{{ doc('staff_id') }}"
               tests:
                 - not_null
 
       - name: products
         schema: source
-        description :  "{{ doc('src_t__products') }}"
+        description :  "{{ doc('src_products') }}"
         columns : 
             - name : product_id
+              description : "{{ doc('product_id') }}"
               tests:
                 - not_null
                 - unique
             - name : product_name
+              description : "{{ doc('product_name') }}"
             - name : brand_id
+              description : "{{ doc('brand_id') }}"
               tests:
                 - not_null
             - name : category_id
+              description : "{{ doc('category_id') }}"
               tests:
                 - not_null
             - name : model_year
+              description : "{{ doc('model_year') }}"
             - name : list_price
+              description : "{{ doc('list_price') }}"
+              tests : 
+                - not_null
 
       - name: staffs
         schema: source
-        description :  "{{ doc('src_t__staffs') }}"
+        description :  "{{ doc('src_staffs') }}"
         columns : 
             - name : staff_id
+              description : "{{ doc('staff_id') }}"
               tests:
                 - not_null
                 - unique
             - name : first_name
+              description : "{{ doc('first_name') }}"
+              tests:
+                - not_null
             - name : last_name
+              description : "{{ doc('last_name') }}"
+              tests:
+                - not_null
             - name : email
+              description : "{{ doc('email') }}"
             - name : phone
+              description : "{{ doc('phone') }}"
             - name : active
+              description : "{{ doc('active') }}"
+              tests:
+                - not_null
             - name : store_id
+              description : "{{ doc('store_id') }}"
               tests:
                 - not_null
             - name : manager_id
+              description : "{{ doc('manager_id') }}"
               tests:
                 - not_null
 
       - name: stocks
         schema: source
-        description :  "{{ doc('src_t__stocks') }}"
+        description :  "{{ doc('src_stocks') }}"
         columns : 
             - name : store_id
+              description : "{{ doc('store_id') }}"
               tests:
                 - not_null
             - name : product_id
+              description : "{{ doc('product_id') }}"
               tests:
                 - not_null
             - name : quantity
+              description : "{{ doc('quantity') }}"
 
       - name: stores
         schema: source
-        description :  "{{ doc('src_t__stores') }}"
+        description :  "{{ doc('src_stores') }}"
         columns : 
             - name : store_id
+              description : "{{ doc('store_id') }}"
               tests:
                 - not_null
+                - unique
             - name : store_name
+              description : "{{ doc('store_name') }}"
+              tests:
+                - not_null
             - name : phone
+              description : "{{ doc('phone') }}"
             - name : email
+              description : "{{ doc('email') }}"
             - name : street
+              description : "{{ doc('street') }}"
             - name : city
+              description : "{{ doc('city') }}"
             - name : state
+              description : "{{ doc('state') }}"
             - name : zip_code
+              description : "{{ doc('zip_code') }}"
