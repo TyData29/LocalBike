@@ -74,6 +74,7 @@ join_sales as (
         i.list_based_amount,
         i.billed_amount,
         -- stores
+        s.store_id,
         s.store_name,
         s.store_state,
         s.store_zip_code,
@@ -84,6 +85,7 @@ join_sales as (
         c.customer_zip_code,
         c.customer_city,
         -- products
+        p.product_id,
         p.product_name,
         p.model_year,
         p.category_name,
@@ -109,6 +111,7 @@ agg_sales as (
         order_date_month,
         order_date_weekday,
         -- stores
+        store_id,
         store_name,
         store_state,
         store_zip_code,
@@ -118,6 +121,7 @@ agg_sales as (
         customer_zip_code,
         customer_city,
         -- products
+        product_id,
         product_name,
         model_year,
         category_name,
@@ -135,6 +139,7 @@ agg_sales as (
         order_date_year,
         order_date_month,
         order_date_weekday,
+        store_id,
         store_name,
         store_state,
         store_zip_code,
@@ -142,6 +147,7 @@ agg_sales as (
         customer_state,
         customer_zip_code,
         customer_city,
+        product_id,
         product_name,
         model_year,
         category_name,
