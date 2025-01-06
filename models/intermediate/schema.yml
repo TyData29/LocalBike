@@ -3,5 +3,33 @@ version: 2
 models:
     
   - name: itm_staff_performance
+    description : "{{ doc('itm_staff_performance')}}"
+    columns:
+      - name: staff_id
+        
+      - name: first_name
+        description: "{{ doc('first_name') }}"
+      - name: last_name
+        description: "{{ doc('last_name') }}"
+      - name: store_id
+        description: "{{ doc('store_id') }}"
+      - name: store_name
+        description: "{{ doc('store_name') }}"
+      - name: order_date_year
+        description: "{{ doc('order_date_year') }}"
+      - name: order_date_month
+        description: "{{ doc('order_date_month') }}"
+      - name: orders_total
+        description: "{{ doc('orders_total') }}"
+      - name: list_based_value_sum
+        description: "{{ doc('list_based_value_sum') }}"
+      - name: revenue_sum
+        description: "{{ doc('revenue_sum') }}"
+      - name: average_discount_ratio
+        description: "{{ doc('average_discount_ratio') }}"
+      - name: avg_revenue_per_order
+        description: "{{ doc('avg_revenue_per_order') }}"
   - name : itm_sales
+    description : "{{ doc('itm_sales') }}"
   - name : itm_inventory
+    description : "{{ doc('itm_inventory') }}"

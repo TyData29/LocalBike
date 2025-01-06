@@ -1,0 +1,10 @@
+version: 2
+data_tests:
+  - name: assert_total_orders_amount_is_positive
+    description: >
+      Les remboursements éventuels ne peuvent excéder le montant de la commande initial
+      -> Une commande dont le montant total est < 0 fait donc échouer le test 
+  - name: assert_total_customer_orders_at_least_1
+    description: >
+      Un client doit avoir passé au moins une commande. 
+      -> Un client enregistrés pour lequel aucune commande n'a été passsée fait donc échouer le test

@@ -28,7 +28,7 @@ SELECT
     order_date_year,
     order_date_month,
     orders_total,
-    list_base_value_sum,
+    list_based_value_sum,
     revenue_sum,
     average_discount_ratio,
     avg_revenue_per_order
