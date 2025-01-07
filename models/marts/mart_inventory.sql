@@ -30,7 +30,7 @@ date_range AS ( -- Génère toutes les dates correspondant à la période supér
         ) AS day
 ),
 stores_sales_by_product as ( -- Aggréger les ventes par date de commande, produit et POS
-    select store_id, product_id, order_date, sum(nb_products_total) as daily_sales 
+    select store_id, product_id, order_date, sum(sold_products_total) as daily_sales 
     from filtered_sales
     group by store_id, product_id, order_date
 ),

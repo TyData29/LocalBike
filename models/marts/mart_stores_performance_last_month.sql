@@ -25,7 +25,7 @@ stores_synthetic_sales as (
         order_date_month,
         sum(orders_total) as orders_total,
         sum(distinct_customers_total) as distinct_customers_total,
-        sum(selled_products_total) as selled_products_total,
+        sum(sold_products_total) as sold_products_total,
         sum(list_base_value_sum) as list_base_value_sum,
         sum(revenue_sum) as revenue_sum
     from filter_stores_perf

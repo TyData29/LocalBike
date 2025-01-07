@@ -6,7 +6,7 @@ models:
     description : "{{ doc('itm_staff_performance')}}"
     columns:
       - name: staff_id
-        
+        description: "{{ doc('staff_id') }}"
       - name: first_name
         description: "{{ doc('first_name') }}"
       - name: last_name
@@ -29,7 +29,16 @@ models:
         description: "{{ doc('average_discount_ratio') }}"
       - name: avg_revenue_per_order
         description: "{{ doc('avg_revenue_per_order') }}"
+
   - name : itm_sales
     description : "{{ doc('itm_sales') }}"
   - name : itm_inventory
     description : "{{ doc('itm_inventory') }}"
+  - name : itm_customers
+    description : "{{ doc('itm_customers') }}"
+    columns : 
+      - name : last_order_date
+        description : "{{ doc('last_order_date') }}"
+        tests : 
+          - dbt_utils.expression_is_true:
+              expression: ">= first_order_date"

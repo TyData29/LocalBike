@@ -20,11 +20,13 @@ stores_synthetic_sales as (
         category_name,
         brand_name,
         product_name,
-        sum(orders_count) as orders_total,
+        sum(orders_total) as orders_total,
         sum(distinct_customers) as distinct_customers_total,
-        sum(nb_products_total) as selled_products_total,
-        sum(list_based_amount_sum) as list_base_value_sum,
-        sum(billed_amount_sum) as revenue_sum
+        sum(sold_products_total) as sold_products_total,
+        sum(list_based_value_sum) as list_base_value_sum,
+        sum(billed_amount_sum) as revenue_sum,
+        sum(billed_amount_sum) / sum(distinct_customers) as avg_revenue_per_client,
+        sum(billed_amount_sum) / sum(orders_total) as avg_revenue_per_order
     from stores_sales
     group by 
         store_name,
