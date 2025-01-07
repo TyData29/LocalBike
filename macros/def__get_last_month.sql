@@ -1,14 +1,14 @@
-{% macro get_last_month(cte_name, order_date_expr) %}
+{% macro get_last_month(cte_name, date_expr) %}
 {# 
     Renvoie au format YYYYMM la référence du dernier mois échu
     Paramètres :
         cte_name : la référence de CTE à partir de laquelle le calcul est réalisé
-        order_date_expr : un champ ou une expression de date au format YYYYMM
+        date_expr : un champ ou une expression de date au format YYYYMM
     La macro calcule la valeur max de order_date_expr (-> le mois en cours) et soustrait 1 mois pour obtenir le dernier mois échu
  #}
   with get_current_month as (
     select 
-      CAST(max( {{ order_date_expr }} ) AS INT64) as max_order_period
+      CAST(max( {{ date_expr }} ) AS INT64) as max_order_period
     from {{ cte_name }}
   ),
   get_last_month as (

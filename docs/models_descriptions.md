@@ -15,6 +15,11 @@
     Cette vue compile les informations sur les stocks disponibles
 {% enddocs %}
 
+{% docs itm_customers %}
+    Cette vue compile les informations sur les clients
+{% enddocs %}
+
+
 
 ## Marts models
 {% docs mart_staff_performance_last_month %}
@@ -41,6 +46,21 @@
     Elle permet d'anticiper les commandes de réapprovisionnement pour éviter les délais de livraison clients et les éventuelles pertes de CA liées à l'indisponibilité des produits stratégiques en POS.
 {% enddocs %}
 
+{% docs mart_customers %}
+    Cette table enrichit les **informations sur les clients** avec différentes métriques, en particulier sur la durée de la relation client et le statut du client
+{% enddocs %}
+
 ## Macros
+{% docs def__get_last_month %}
+    Cet macro permet d'obtenir automatiquement le dernier mois échu (complet)
+
+    Returns : 
+        Renvoie au format YYYYMM la référence du dernier mois échu
+    Paramètres :
+        cte_name : la référence de CTE à partir de laquelle le calcul est réalisé
+        date_expr : un champ ou une expression de date au format "YYYYMM"
+    Method : 
+        La macro calcule la valeur max de order_date_expr (-> le mois en cours) et soustrait 1 mois pour obtenir le dernier mois échu
+{% enddocs %}
 
 ## Misc

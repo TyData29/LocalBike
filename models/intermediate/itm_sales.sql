@@ -117,6 +117,7 @@ agg_sales as (
         store_zip_code,
         store_city,
         -- customers
+        customer_id,
         customer_state,
         customer_zip_code,
         customer_city,
@@ -128,10 +129,10 @@ agg_sales as (
         brand_name,
         -- metrics
         count(distinct customer_id) as distinct_customers,
-        count(order_id) as orders_count,
-        sum( list_based_amount ) as list_based_amount_sum,
+        count(order_id) as orders_total,
+        sum( list_based_amount ) as list_based_value_sum,
         sum( billed_amount ) as billed_amount_sum,
-        sum(quantity) as nb_products_total
+        sum(quantity) as sold_products_total
 
     from join_sales
     group by 
@@ -144,6 +145,7 @@ agg_sales as (
         store_state,
         store_zip_code,
         store_city,
+        customer_id,
         customer_state,
         customer_zip_code,
         customer_city,

@@ -73,8 +73,8 @@ models:
       - name: distinct_customers_total
         description : "{{ doc('distinct_customers_total') }}"
         data_type: int64
-      - name: selled_products_total
-        description : "{{ doc('selled_products_total') }}"
+      - name: sold_products_total
+        description : "{{ doc('sold_products_total') }}"
         data_type: int64
       - name: list_base_value_sum
         description : "{{ doc('list_based_value_sum') }}"
@@ -127,8 +127,8 @@ models:
       - name: distinct_customers_total
         description : "{{ doc('distinct_customers_total') }}"
         data_type: int64
-      - name: selled_products_total
-        description : "{{ doc('selled_products_total') }}"
+      - name: sold_products_total
+        description : "{{ doc('sold_products_total') }}"
         data_type: int64
       - name: list_base_value_sum
         description : "{{ doc('list_based_value_sum') }}"
@@ -136,6 +136,11 @@ models:
       - name: revenue_sum
         description : "{{ doc('revenue_sum') }}"
         data_type: float64
+      - name: avg_revenue_per_client
+        description : "{{ doc('avg_revenue_per_client') }}"
+      - name : avg_revenue_per_order
+        description : "{{ doc('avg_revenue_per_order') }}"
+
 
   - name : mart_inventory
     description : "{{ doc('mart_inventory') }}"
@@ -159,6 +164,7 @@ models:
       - name: product_name
         description: "{{ doc('product_name') }}"
         data_type: string
+      # Métriques
       - name: stock_quantity
         description: "{{ doc('stock_quantity') }}"
         data_type: string
@@ -167,4 +173,45 @@ models:
         data_type: string
       - name: estimated_stock_out_date
         description: "{{ doc('estimated_stock_out_date') }}"
+        data_type: string
+  - name : mart_customers
+    description : "{{ doc('mart_customers') }}"
+    columns:
+      # Dimensions
+      - name: customer_id
+        description: "{{ doc('customer_id') }}"
+        data_type: integer
+      - name: customer_name
+        description: "{{ doc('customer_name') }}"
+        data_type: string
+      - name: city
+        description: "{{ doc('city') }}"
+        data_type: string
+      - name: state
+        description: "{{ doc('state') }}"
+        data_type: string
+      - name: first_order_date
+        description: "{{ doc('first_order_date') }}"
+        data_type: date
+      - name: last_order_date
+        description: "{{ doc('last_order_date') }}"
+        data_type: date
+      # Métriques
+      - name: customer_lifetime_days
+        description: "{{ doc('customer_lifetime_days') }}"
+        data_type: interger
+      - name: total_revenue
+        description: "{{ doc('revenue_sum') }}"
+        data_type: float
+      - name: total_orders
+        description: "{{ doc('orders_total') }}"
+        data_type: integer
+      - name: sold_products_total
+        description: "{{ doc('sold_products_total') }}"
+        data_type: integer
+      - name: avg_revenue_per_order
+        description: "{{ doc('avg_revenue_per_order') }}"
+        data_type: float
+      - name: customer_status
+        description: "{{ doc('customer_status') }}"
         data_type: string

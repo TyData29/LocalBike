@@ -63,7 +63,6 @@
     Date d'expédition
 {% enddocs %}
 
-
 **Commandes**
 
 {% docs order_id %}
@@ -182,7 +181,7 @@
     Nombre total de commandes
 {% enddocs %}
 
-{% docs selled_products_total %}
+{% docs sold_products_total %}
     Nombre total de produits vendus
 {% enddocs %}
 
@@ -196,6 +195,10 @@
 
 {% docs revenue_sum %}
     CA total
+{% enddocs %}
+
+{% docs billed_amout_sum %}
+    Montant total facturé
 {% enddocs %}
 
 {% docs average_discount_ratio %}
@@ -214,12 +217,36 @@
     Retard d'expédition (en jours)
  {% enddocs %}   
 
+{% docs first_order_date %}
+    Date de la première commande
+ {% enddocs %}   
+
+{% docs last_order_date %}
+    Date de la dernière commande
+ {% enddocs %}   
+
 
 **Clients**
+
+{% docs customer_name %}
+    Prénom + Nom du client
+{% enddocs %}
 
 {% docs distinct_customers_total %}
     Nombre total de clients distincts
 {% enddocs %}
+
+{% docs avg_revenue_per_client %}
+    CA moyen par client
+{% enddocs %}
+
+{% docs customer_status %}
+    Statut du client (Active / Sleeping / Inactive)
+ {% enddocs %}   
+
+{% docs customer_lifetime_days %}
+    Durée de la relation client (en jours)
+ {% enddocs %}   
 
 **Stocks**
 
